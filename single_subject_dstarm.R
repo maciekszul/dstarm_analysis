@@ -2,8 +2,8 @@
 library(DstarM)
 library(sm)
 # data load
-kb <- read.csv('RTforR_keyboard.csv')
-joy <- read.csv('RTforR_joystick.csv')
+kb <- read.csv('RTforR_keyboard.csv') # data from keyboard
+joy <- read.csv('RTforR_joystick.csv') # data from joystick
 
 # data clean
 colnames(kb) <- c('pp', 'condition', 'response', 'rt')
@@ -11,8 +11,8 @@ colnames(joy) <- c('pp', 'condition', 'response', 'rt')
 kb$response <- kb$response == 'True'
 joy$response <- joy$response == 'True'
 
-# subject selection
-subj <- sort((unique(kb$pp)))[3]
+# subject data selection
+subj <- sort((unique(kb$pp)))[3] 
 
 kb_p <- kb[kb$pp == subj,]
 joy_p <- joy[joy$pp == subj,]
